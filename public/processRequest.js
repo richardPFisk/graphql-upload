@@ -1,13 +1,11 @@
-'use strict';
-
-const Busboy = require('busboy');
-const { WriteStream } = require('fs-capacitor');
-const createError = require('http-errors');
-const isObject = require('isobject');
-const objectPath = require('object-path');
-const { SPEC_URL } = require('../private/constants');
-const ignoreStream = require('../private/ignoreStream');
-const Upload = require('./Upload');
+import Busboy from 'busboy';
+import {WriteStream} from 'fs-capacitor';
+import createError from 'http-errors';
+import isObject from 'isobject';
+import objectPath from 'object-path';
+import {SPEC_URL} from '../private/constants';
+import ignoreStream from '../private/ignoreStream';
+import Upload from './Upload';
 
 /**
  * Processes a [GraphQL multipart request](https://github.com/jaydenseric/graphql-multipart-request-spec).
@@ -41,7 +39,7 @@ const Upload = require('./Upload');
  * const processRequest = require('graphql-upload/public/processRequest');
  * ```
  */
-module.exports = function processRequest(
+export default function processRequest(
   request,
   response,
   {

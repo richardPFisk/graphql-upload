@@ -1,7 +1,5 @@
-'use strict';
-
-const { GraphQLScalarType, GraphQLError } = require('graphql');
-const Upload = require('./Upload');
+import {GraphQLScalarType, GraphQLError} from 'graphql';
+import Upload from './Upload';
 
 /**
  * A GraphQL `Upload` scalar that can be used in a
@@ -74,7 +72,7 @@ const Upload = require('./Upload');
  * });
  * ```
  */
-module.exports = new GraphQLScalarType({
+export default new GraphQLScalarType({
   name: 'Upload',
   description: 'The `Upload` scalar type represents a file upload.',
   parseValue(value) {

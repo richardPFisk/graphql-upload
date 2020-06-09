@@ -1,6 +1,4 @@
-'use strict';
-
-const defaultProcessRequest = require('./processRequest');
+import defaultProcessRequest from './processRequest';
 
 /**
  * Creates [Express](https://expressjs.com) middleware that processes
@@ -46,7 +44,7 @@ const defaultProcessRequest = require('./processRequest');
  *   .listen(3000);
  * ```
  */
-module.exports = function graphqlUploadExpress({
+export default function graphqlUploadExpress({
   processRequest = defaultProcessRequest,
   ...processRequestOptions
 } = {}) {
